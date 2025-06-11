@@ -1,0 +1,29 @@
+version: 2.1
+
+jobs:
+  postman-tests:
+    docker:
+      - image: cimg/node:18.17  
+    steps:
+      - checkout
+      - run:
+          name: Install Newman
+          command: npm install newman
+      - run:
+          name: Install HTML Reporter
+          command: npm install newman-reporter-html --legacy-peer-deps
+      - run:
+          name: Run Postman collection
+          command: |
+            npx newman run tests/API_Testing.postman_collection.json \
+              --environment tests/API_Testing.postman_environment.json \
+              --reporters cli,html \
+              --reporter-html-export newman-report.html
+      - store_artifacts:
+          path: newman-report.html
+          destination: postman-report
+
+workflows:
+  run-postman:
+    jobs:
+      - postman-tests
