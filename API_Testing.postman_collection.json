@@ -1,0 +1,1395 @@
+{
+	"info": {
+		"_postman_id": "bfdc474f-295b-4326-b4f1-d89f1f8a827e",
+		"name": "API_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32829184"
+	},
+	"item": [
+		{
+			"name": "Final project",
+			"item": [
+				{
+					"name": "Get Folders",
+					"item": [
+						{
+							"name": "Post Folder_1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id1 = jsonData.id",
+											"pm.environment.set(\"folder_id1\", folder_id1);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Folder_2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id2 = jsonData.id",
+											"pm.environment.set(\"folder_id2\", folder_id2);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folders",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folders without token",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "uuuu11ll",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder_1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id1}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id1}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder_2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id2}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id2}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Folder",
+					"item": [
+						{
+							"name": "Post Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id = jsonData.id",
+											"pm.environment.set(\"folder_id\", folder_id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Folder with invalid space id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/77788/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"77788",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Folder without name",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {",
+											"    pm.response.to.have.status(400);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Folder",
+					"item": [
+						{
+							"name": "Post Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id = jsonData.id",
+											"pm.environment.set(\"folder_id\", folder_id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder by invalid id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/90457464",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"90457464"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Update Folder",
+					"item": [
+						{
+							"name": "Post Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id = jsonData.id",
+											"pm.environment.set(\"folder_id\", folder_id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Folder by",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"The folder name is updated\", function () {",
+											"    var jsonData = pm.response.json();",
+											"    var expectedName = pm.collectionVariables.get('folder_name')",
+											"    pm.expect(jsonData.name).to.eql(expectedName);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"var name = pm.variables.replaceIn('{{$randomCountry}}')",
+											"pm.collectionVariables.set(\"folder_name\", name);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{folder_name}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get updated Folder by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Folder with invalid id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomLastName}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/folder/111111",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"111111"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Delete Folder",
+					"item": [
+						{
+							"name": "Post Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id = jsonData.id",
+											"pm.environment.set(\"folder_id\", folder_id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCity}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder by id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder with invalid id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/5367252",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"5367252"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Create Folder from template",
+					"item": [
+						{
+							"name": "Post Folder by template",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"var jsonData = pm.response.json();",
+											"var folder_id = jsonData.id",
+											"pm.environment.set(\"folder_id\", folder_id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCountry}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder_template/{{template_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder_template",
+										"{{template_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Folder by invalid template id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {",
+											"    pm.response.to.have.status(404);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCountry}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/{{space_id}}/folder_template/773926",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"{{space_id}}",
+										"folder_template",
+										"773926"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Folder by template with invalid space id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 401\", function () {",
+											"    pm.response.to.have.status(401);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"{{$randomCountry}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/space/78362/folder_template/{{template_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"space",
+										"78362",
+										"folder_template",
+										"{{template_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Folder",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{my_token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/folder/{{folder_id}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"folder",
+										"{{folder_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "space_id",
+			"value": "90154465650"
+		},
+		{
+			"key": "folder_name",
+			"value": ""
+		}
+	]
+}
